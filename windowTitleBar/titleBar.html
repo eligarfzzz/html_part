@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            height: 500px;
+            width: 100%;
+            /* background: #ccc; */
+            font-size: 0;
+        }
+    </style>
+    <style>
+        .window_title_bar {
+            background: rgb(50, 50, 51);
+            width: 100%;
+            height: 30px;
+            display: flex;
+        }
+    </style>
+    <style>
+        /* 菜单栏 */
+        .menu_bar {
+            width: fit-content;
+            height: 100%;
+            display: inline-block;
+        }
+
+        /* 菜单栏标题 */
+        .menu_button {
+            display: inline-flex;
+            height: 100%;
+            padding: 0 14px;
+            color: #ddd;
+            font-size: 13px;
+            text-align: center;
+            align-items: center;
+            cursor: default;
+            user-select: none;
+            position: relative;
+        }
+
+
+        /* 菜单背景 */
+        .menu_list {
+            display: none;
+            position: absolute;
+            list-style: none;
+            width: 250px;
+            padding: 9px 0 7px 0;
+            margin: 0;
+            left: 0;
+            top: 100%;
+            /* 菜单背景 */
+            background: rgb(37, 37, 38);
+            /* 阴影 */
+            box-shadow: 0px 5px 20px #666;
+        }
+
+        .menu_button:hover .menu_list {
+            display: block;
+        }
+
+
+        /* 分隔栏 */
+        .menu_list .split::before {
+            width: 90%;
+            height: 1px;
+            content: '';
+            display: inline-block;
+            background: #aaa;
+            margin: 4px 0;
+        }
+
+        .menu_list .split {
+            font-size: 0;
+        }
+
+        /* 菜单选项 */
+        .menu_list li a {
+            display: block;
+            text-align: left;
+            padding: 4px 20px;
+            font-size: 13px;
+            width: 100%;
+            color: #eee;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        /* 菜单选项选中背景 */
+        .menu_list li:hover {
+            background: rgb(9, 71, 113);
+        }
+
+        /* 选项右侧文字 */
+        .right_item_text {
+            float: right;
+        }
+    </style>
+
+
+    <style>
+        .logo_icon {
+            display: inline-block;
+            height: 100%;
+            width: 30px;
+            flex-grow: 0;
+        }
+
+        .content_center {
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo_icon_img {
+            height: 90%;
+            width: 90%;
+            object-fit: contain;
+        }
+
+        .title_text {
+            font-size: 14px;
+            color: #eee;
+            flex-grow: 1;
+            user-select: none;
+        }
+
+        .window_buttons {
+            float: right;
+            height: 100%;
+            width: 140px;
+        }
+
+        .win_btn {
+            display: inline-block;
+            height: 100%;
+            width: 33.3%;
+        }
+        
+        .h_gy,.h_rd{
+            transition: 0.5s;
+        }
+
+        .h_gy:hover {
+            background: rgb(70, 70, 71);
+        }
+
+        .h_rd:hover {
+            background: rgb(215, 21, 38);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+
+        <div class="window_title_bar">
+            <!-- 左上角logo区域 -->
+            <div class="logo_icon content_center">
+                <img class="logo_icon_img logo_icon_img_frame" src="./img.jpg" alt="">
+            </div>
+            <!-- 菜单区域 -->
+            <div class="menu_bar">
+                <div class="menu_button h_gy">文件
+                    <ul class="menu_list">
+                        <li><a href="#">打开文件<span class="right_item_text">ctrl + c</span></a></li>
+                        <li><a href="#">打开文件夹<span class="right_item_text">ctrl + v</span></a></li>
+                        <li><a href="#">打开工作区<span class="right_item_text">ctrl + b</span></a></li>
+                        <div class="split"></div>
+                        <li><a href="#">设定</a></li>
+                    </ul>
+                </div>
+                <div class="menu_button h_gy">编辑
+                    <ul class="menu_list">
+                        <li><a href="#">打开文件<span class="right_item_text">ctrl + c</span></a></li>
+                        <li><a href="#">打开文件夹<span class="right_item_text">ctrl + v</span></a></li>
+                        <li><a href="#">打开工作区<span class="right_item_text">ctrl + b</span></a></li>
+                        <div class="split"></div>
+                        <li><a href="#">设定</a></li>
+                    </ul>
+                </div>
+
+                <div class="menu_button h_gy ">帮助
+                    <ul class="menu_list">
+                        <li><a href="#">打开文件<span class="right_item_text">ctrl + c</span></a></li>
+                        <li><a href="#">打开文件夹<span class="right_item_text">ctrl + v</span></a></li>
+                        <li><a href="#">打开工作区<span class="right_item_text">ctrl + b</span></a></li>
+                        <div class="split"></div>
+                        <li><a href="#">设定</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 标题文字区域 -->
+            <div class="title_text content_center">zzzz</div>
+            <!-- 窗口按钮区域 -->
+            <div class="window_buttons">
+                <a href="" class="win_btn h_gy content_center"><img class="logo_icon_img logo_icon_img_frame"
+                        src="./like.png" alt=""></a>
+                <a href="" class="win_btn h_gy content_center"><img class="logo_icon_img logo_icon_img_frame"
+                        src="./like.png" alt=""></a>
+                <a href="" class="win_btn h_rd content_center"><img class="logo_icon_img logo_icon_img_frame"
+                        src="./like.png" alt=""></a>
+            </div>
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
