@@ -100,6 +100,13 @@
         .right_item_text {
             float: right;
         }
+
+        .svg_icon {
+            height: fit-content;
+            width: 35%;
+            fill: #fff;
+            font-size: 0;
+        }
     </style>
 
 
@@ -118,8 +125,8 @@
         }
 
         .logo_icon_img {
-            height: 90%;
-            width: 90%;
+            height: 70%;
+            width: 70%;
             object-fit: contain;
         }
 
@@ -140,9 +147,11 @@
             display: inline-block;
             height: 100%;
             width: 33.3%;
+            cursor: default;
         }
-        
-        .h_gy,.h_rd{
+
+        .h_gy,
+        .h_rd {
             transition: 0.5s;
         }
 
@@ -162,7 +171,7 @@
         <div class="window_title_bar">
             <!-- 左上角logo区域 -->
             <div class="logo_icon content_center">
-                <img class="logo_icon_img logo_icon_img_frame" src="./img.jpg" alt="">
+                <img class="logo_icon_img" src="./like.png" alt="">
             </div>
             <!-- 菜单区域 -->
             <div class="menu_bar">
@@ -199,12 +208,46 @@
             <div class="title_text content_center">zzzz</div>
             <!-- 窗口按钮区域 -->
             <div class="window_buttons">
-                <a href="" class="win_btn h_gy content_center"><img class="logo_icon_img logo_icon_img_frame"
-                        src="./like.png" alt=""></a>
-                <a href="" class="win_btn h_gy content_center"><img class="logo_icon_img logo_icon_img_frame"
-                        src="./like.png" alt=""></a>
-                <a href="" class="win_btn h_rd content_center"><img class="logo_icon_img logo_icon_img_frame"
-                        src="./like.png" alt=""></a>
+                <a href="" class="win_btn h_gy content_center">
+
+                    <div class="svg_icon">
+                        <svg t="1601098701517" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="3708" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <style type="text/css"></style>
+                            </defs>
+                            <path d="M98.23 451.003l829.685-1.992 0.154 64-829.685 1.992z" p-id="3709"></path>
+                        </svg>
+                    </div>
+
+                </a>
+                <a href="" class="win_btn h_gy content_center">
+                    <div class="svg_icon">
+                        <svg t="1601098743030" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="4527" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <style type="text/css"></style>
+                            </defs>
+                            <path
+                                d="M204.8 256a51.2 51.2 0 0 0-51.2 51.2v409.6a51.2 51.2 0 0 0 51.2 51.2h614.4a51.2 51.2 0 0 0 51.2-51.2V307.2a51.2 51.2 0 0 0-51.2-51.2H204.8z m0-51.2h614.4a102.4 102.4 0 0 1 102.4 102.4v409.6a102.4 102.4 0 0 1-102.4 102.4H204.8a102.4 102.4 0 0 1-102.4-102.4V307.2a102.4 102.4 0 0 1 102.4-102.4z"
+                                p-id="4528"></path>
+                        </svg>
+                    </div>
+                </a>
+                <a href="" class="win_btn h_rd content_center">
+                    <div class="svg_icon">
+                        <svg t="1601098645021" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" p-id="3128" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <style type="text/css"></style>
+                            </defs>
+                            <path
+                                d="M566.97558594 521.09667969L856.8828125 231.18945312c14.63378906-14.63378906 14.63378906-38.75976563 0-53.39355468l-1.58203125-1.58203125c-14.63378906-14.63378906-38.75976563-14.63378906-53.39355469 0L512 466.51660156 222.09277344 176.21386719c-14.63378906-14.63378906-38.75976563-14.63378906-53.39355469 0l-1.58203125 1.58203125c-15.02929688 14.63378906-15.02929688 38.75976563 0 53.39355469l289.90722656 289.90722656L167.1171875 811.00390625c-14.63378906 14.63378906-14.63378906 38.75976563 0 53.39355469l1.58203125 1.58203125c14.63378906 14.63378906 38.75976563 14.63378906 53.39355469 0L512 576.07226563 801.90722656 865.97949219c14.63378906 14.63378906 38.75976563 14.63378906 53.39355469 0l1.58203125-1.58203125c14.63378906-14.63378906 14.63378906-38.75976563 0-53.39355469L566.97558594 521.09667969z"
+                                p-id="3129"></path>
+                        </svg>
+                    </div>
+                </a>
+
             </div>
         </div>
 
