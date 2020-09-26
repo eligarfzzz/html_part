@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-image: url("./greek.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .dialog_frame {
+            position: absolute;
+            backdrop-filter: saturate(180%) blur(15px);
+            background: rgba(255, 255, 255, 0.2);
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .dialog_container {
+            width: 40%;
+            height: fit-content;
+            background: white;
+            border-radius: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            box-shadow: 0 3px 12px #000;
+            max-height: 90%;
+            overflow: auto;
+        }
+
+        .dialog_container .dialog_btn {
+            float: right;
+
+        }
+
+        .dialog_container p,
+        .dialog_container h3 {
+            display: inline-block;
+        }
+
+        .dialog_container header {
+            padding: 20px 20px 0 20px;
+        }
+
+        .dialog_container main {
+            padding: 0 20px 20px 20px;
+            
+            overflow: auto;
+        }
+
+        .dialog_container footer {
+            /* justify-content: end; */
+            padding: 20px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dialog_frame">
+
+        <div class="dialog_container">
+            <header>
+                <h3>
+                    标题
+                </h3>
+                <button class="dialog_btn">x</button>
+                <hr>
+            </header>
+            <main>
+                <p>
+                    内容
+                </p>
+            </main>
+            <footer>
+                <button>确定</button>
+            </footer>
+        </div>
+
+    </div>
+</body>
+
+</html>
