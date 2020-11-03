@@ -61,7 +61,7 @@
 }
 
 /* 菜单选项 */
-.menu_list li a {
+.menu_item_btn {
     display: block;
     text-align: left;
     padding: 4px 20px;
@@ -150,4 +150,9 @@
 
 .h_rd:hover {
     background: rgb(215, 21, 38);
+}
+
+/*  electron 支持 */
+.drag_area {
+    -webkit-app-region: drag;
 }

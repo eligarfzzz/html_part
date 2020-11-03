@@ -2,17 +2,20 @@ type OnMiniCallBack = () => void;
 type OnMaxUnmaxCallBack = () => void;
 type OnCloseCallBack = () => void;
 type OnMenuBtnClickCallBack = () => void;
+
+//单个菜单
+class Menus {
+    public MenuTitle: string = '';
+    public MenuItems: Array<MenuItem> = [];
+}
 class MenuItem {
     public IsSpliter: boolean = false;
     public ItemName: string = '';
     public shotCut: string = '';
     public OnBtnClick: OnMenuBtnClickCallBack = () => { };
 }
-class Menus {
-    public MenuTitle: string = '';
-    public MenuItems: Array<MenuItem> = [];
-}
-class MenuList extends React.Component {
+//单个菜单组件
+class MenuView extends React.Component {
     props: any;
     constructor(props: any) {
         super(props);
@@ -23,9 +26,11 @@ class MenuList extends React.Component {
             {this.props.MenuTitle}
             <ul className="menu_list">{
                 this.props.MenuItems.map((item: MenuItem, index: number) => item.IsSpliter ?
+                    // 分隔
                     <div key={index} className="split"></div> :
+                    // 或按钮
                     <li key={index}>
-                        <a onClick={item.OnBtnClick}>{item.ItemName}<span className="right_item_text">{item.shotCut}</span></a>
+                        <div className="menu_item_btn" onClick={item.OnBtnClick}>{item.ItemName}<span className="right_item_text">{item.shotCut}</span></div>
                     </li>
                 )
             }
@@ -57,7 +62,7 @@ class TitleBar extends React.Component {
                 </div>
                 {/* <!-- 菜单区域 --> */}
                 <div className="menu_bar">{
-                    this.props.Menu.map((menu, index) => <MenuList key={index} MenuTitle={menu.MenuTitle} MenuItems={menu.MenuItems} ></MenuList>)
+                    this.props.Menu.map((menu, index) => <MenuView key={index} MenuTitle={menu.MenuTitle} MenuItems={menu.MenuItems} ></MenuView>)
                 }
 
                 </div>
@@ -75,7 +80,7 @@ class TitleBar extends React.Component {
                     </a>
                     <a onClick={() => {
                         this.props.onClose()
-                    }} className={"win_btn h_gy content_center " + this.props.CloseBtnClassNames}>
+                    }} className={"win_btn h_rd content_center " + this.props.CloseBtnClassNames}>
                     </a>
                 </div>
             </div>
