@@ -3,7 +3,7 @@ type OnMaxUnmaxCallBack = () => void;
 type OnCloseCallBack = () => void;
 type OnMenuBtnClickCallBack = () => void;
 
-//单个菜单
+// 单个菜单
 class Menus {
     public MenuTitle: string = '';
     public MenuItems: Array<MenuItem> = [];
@@ -14,7 +14,7 @@ class MenuItem {
     public shotCut: string = '';
     public OnBtnClick: OnMenuBtnClickCallBack = () => { };
 }
-//单个菜单组件
+// 单个菜单组件
 class MenuView extends React.Component {
     props: any;
     constructor(props: any) {
@@ -38,6 +38,7 @@ class MenuView extends React.Component {
         </div>
     }
 }
+// 窗口标题栏组件
 class TitleBar extends React.Component {
     props;
     constructor(props:
@@ -87,7 +88,7 @@ class TitleBar extends React.Component {
         </div >;
     }
 }
-// 需要React fontawesome支持
+// 需要React（必须） fontawesome（可选）支持
 // Demo :
 // ReactDOM.render(
 //     <TitleBar Menu={[{
