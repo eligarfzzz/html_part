@@ -1,0 +1,21 @@
+.tab_btn_list,
+.tab_view_list {
+    list-style: none;
+    font-size: 0;
+    position: relative;
+}
+
+.tab_btn_item,
+.tab_view_item {
+    background: red;
+    font-size: 16px;
+}
+
+.horz_item {
+    display: inline-block;
+}
+
+/* demo中使用的 */
+.tab_btn_m {
+    margin: 0 5px;
+}
