@@ -48,24 +48,9 @@ class Loadingswitch extends React.Component<LoadingProp, LoadingState> {
         return this.state.isLoading;
     }
 
-    private getHideStyle(isHide: boolean): React.CSSProperties {
-        return isHide ?
-            {
-                display: "none"
-            } : {
-                display: "inline-block"
-            };
-    }
-
     render() {
         return <div ref={this.props.refPtr.domRef}>
-            <div style={
-                this.getHideStyle(this.isLoading)
-            }> {this.props.loaded}</div>
-
-            <div style={
-                this.getHideStyle(!this.isLoading)
-            }>{this.props.loading}</div>
+            {this.isLoading ? this.props.loading : this.props.loaded}
         </div>
     }
 }
