@@ -15,20 +15,23 @@ type TabCompProps = {
     // 定义tab数组
     Tabs: Array<Tab_t>
     // 初始能看见的tab名字
-    InitVisibleTabName: string;
+    InitVisibleTabName: string,
+    TabBarSelectedClassNames: string,
+    TabBarUnslectedClassNames: string
 }
 
 // 组件
-class TabComp extends React.Component<TabCompProps, { TabStyles: any, Tabs: Array<Tab_t> }> {
-    props: TabCompProps;
+class TabComp extends React.Component<TabCompProps, { TabStyles: any, Tabs: Array<Tab_t>, SelectedTabName: string }> {
+    // props: TabCompProps;
     TabStyles: any = {};
     constructor(prop: TabCompProps) {
         super(prop);
-        this.props = prop;
+        // this.props = prop;
 
         this.state = {
             TabStyles: this.setTabVisible(this.props.InitVisibleTabName),
-            Tabs: prop.Tabs
+            Tabs: prop.Tabs,
+            SelectedTabName: prop.InitVisibleTabName
         };
     }
 
@@ -51,10 +54,19 @@ class TabComp extends React.Component<TabCompProps, { TabStyles: any, Tabs: Arra
                         return <li key={index} className="tab_btn_item horz_item">
                             <span
                                 // 样式
-                                className={"tab_btn " + item.TabItemNameClassNames}
+                                className={
+                                    item.TabItemNameClassNames + " " +
+                                    (
+                                        this.state.SelectedTabName == item.TabItemName ?
+                                            this.props.TabBarSelectedClassNames :
+                                            this.props.TabBarUnslectedClassNames
+                                    )}
                                 // 点击事件
                                 onClick={() => {
-                                    this.setState({ TabStyles: this.setTabVisible(item.TabItemName) });
+                                    this.setState({
+                                        TabStyles: this.setTabVisible(item.TabItemName),
+                                        SelectedTabName: item.TabItemName
+                                    });
                                 }}>
                                 {item.TabItemNameView ? item.TabItemNameView : item.TabItemName}
                             </span>
@@ -83,9 +95,9 @@ class TabComp extends React.Component<TabCompProps, { TabStyles: any, Tabs: Arra
     }
 }
 
-// import ReactDOM from 'react-dom';
-// 需要React 
-// Demo
+// // import ReactDOM from 'react-dom';
+// // 需要React 
+// // Demo
 // ReactDOM.render(
 //     <TabComp Tabs={
 //         [
@@ -124,9 +136,9 @@ class TabComp extends React.Component<TabCompProps, { TabStyles: any, Tabs: Arra
 //                 }></div>,
 //                 TabItemName: "tab13",
 //                 TabItemViewClassNames: "",
-//                 TabItemNameClassNames: "tab_btn_m"
+//                 TabItemNameClassNames: "tab_btn tab_btn_m"
 //             }
 //         ]
-//     } InitVisibleTabName={"tab1"} ></TabComp>,
+//     } InitVisibleTabName={"tab1"} TabBarSelectedClassNames={"tab_btn_selected"} TabBarUnslectedClassNames={"tab_btn_unselected"} ></TabComp>,
 //     document.getElementById('tab_comp')
 // );

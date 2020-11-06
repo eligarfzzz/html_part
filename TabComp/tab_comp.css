@@ -7,7 +7,6 @@
 
 .tab_btn_item,
 .tab_view_item {
-    background: red;
     font-size: 16px;
 }
 
@@ -18,4 +17,12 @@
 /* demo中使用的 */
 .tab_btn_m {
     margin: 0 5px;
+}
+
+.tab_btn_unselected {
+    background: red;
+}
+
+.tab_btn_selected {
+    background: yellowgreen;
 }
